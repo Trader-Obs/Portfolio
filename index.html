@@ -39,7 +39,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOcta[...]
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
 }
@@ -738,10 +738,10 @@ footer {
     <div class="about-grid">
       <div class="about-body reveal">
         <p>
-          I'm a <strong>web developer and cybersecurity student</strong> with a passion for building digital products that look sharp and work reliably. I love the intersection of design and secu[...]
+          I'm a <strong>web developer and cybersecurity student</strong> with a passion for building digital products that look sharp and work reliably. I love the intersection of design and security — making things beautiful without compromising how they function.
         </p>
         <p>
-          My projects range from <strong>luxury brand landing pages</strong> to <strong>interactive concept builds</strong>, and I'm always pushing the craft further. When I'm not coding, I'm pro[...]
+          My projects range from <strong>luxury brand landing pages</strong> to <strong>interactive concept builds</strong>, and I'm always pushing the craft further. When I'm not coding, I'm probably deep in a manga arc or working on my next embroidery design.
         </p>
         <div class="skills-list">
           <span class="skill-tag">HTML / CSS</span>
@@ -800,7 +800,7 @@ footer {
       </div>
       <h3 class="card-title">BLINKKERS Beauty — Brand Landing Page</h3>
       <p class="card-desc">
-        A luxury editorial landing page for a Lagos-based beauty brand. Features scroll animations, a cinematic hero, and Nigerian naira pricing — all with an intentional high-fashion aesthetic[...]
+        A luxury editorial landing page for a Lagos-based beauty brand. Features scroll animations, a cinematic hero, and Nigerian naira pricing — all with an intentional high-fashion aesthetic that holds its own against international competitors.
       </p>
       <div class="card-links">
         <a href="#" class="card-link">Live site →</a>
@@ -865,8 +865,8 @@ footer {
       </div>
       <h3 class="card-title">Red and Black Predictor — Betting Model</h3>
       <p class="card-desc">
-        An experimental predictor for SportyBet's Red–Black (with Green) game.
-This project uses Puppeteer to scrape live game outcomes, applies Markov chains, streak bias, and probability weighting, and attempts to predict the next outcome. This works only on sportybet for[...]
+        An experimental predictor for SportyBet’s Red–Black (with Green) game.
+This project uses Puppeteer to scrape live game outcomes, applies Markov chains, streak bias, and probability weighting, and attempts to predict the next outcome. This works only on sportybet for now.
       </p>
       <div class="card-links">
         <a href="#" class="card-link">Live site →</a>
@@ -918,15 +918,7 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
           </a>
         </div>
       </div>
-      <!-- Contact form now posts to FormSubmit (https://formsubmit.co) -->
       <form class="contact-form reveal" action="https://formsubmit.co/bbrorien@gmail.com" method="POST">
-        <!-- Honeypot to deter bots -->
-        <input type="text" name="_honey" style="display:none">
-        <!-- Redirect back to the GitHub Pages site after submit; FormSubmit requires an absolute URL -->
-        <input type="hidden" name="_next" value="https://trader-obs.github.io/Portfolio/#contact?success=true">
-        <input type="hidden" name="_subject" value="Portfolio message — OBS site">
-        <input type="hidden" name="_captcha" value="false">
-
         <div class="form-group">
           <label>Your name</label>
           <input type="text" name="name" placeholder="Jane Smith" required>
@@ -939,6 +931,15 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
           <label>Message</label>
           <textarea name="message" placeholder="Tell me about your project…" required></textarea>
         </div>
+
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="New message from your portfolio site">
+        <input type="hidden" name="_next" value="success.html">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <!-- Honeypot field to cut down on spam -->
+        <input type="text" name="_honey" style="display:none">
+
         <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send message →</button>
       </form>
     </div>
@@ -997,7 +998,7 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
     }, { threshold: 0.1 });
 
     reveals.forEach(el => io.observe(el));
-
   </script>
+
 </body>
 </html>
