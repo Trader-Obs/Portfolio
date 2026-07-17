@@ -922,8 +922,8 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
       <form class="contact-form reveal" action="https://formsubmit.co/bbrorien@gmail.com" method="POST">
         <!-- Honeypot to deter bots -->
         <input type="text" name="_honey" style="display:none">
-        <!-- Redirect to success.html after submit -->
-        <input type="hidden" name="_next" value="https://trader-obs.github.io/Portfolio/success.html">
+        <!-- Redirect back to the GitHub Pages site after submit; FormSubmit requires an absolute URL -->
+        <input type="hidden" name="_next" value="https://trader-obs.github.io/Portfolio/#contact?success=true">
         <input type="hidden" name="_subject" value="Portfolio message — OBS site">
         <input type="hidden" name="_captcha" value="false">
 
