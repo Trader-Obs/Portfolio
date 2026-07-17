@@ -39,7 +39,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOcta[...] ");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOcta[...]
   pointer-events: none;
   z-index: 0;
 }
@@ -865,7 +865,7 @@ footer {
       </div>
       <h3 class="card-title">Red and Black Predictor — Betting Model</h3>
       <p class="card-desc">
-        An experimental predictor for SportyBet’s Red–Black (with Green) game.
+        An experimental predictor for SportyBet's Red–Black (with Green) game.
 This project uses Puppeteer to scrape live game outcomes, applies Markov chains, streak bias, and probability weighting, and attempts to predict the next outcome. This works only on sportybet for[...]
       </p>
       <div class="card-links">
@@ -922,8 +922,8 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
       <form class="contact-form reveal" action="https://formsubmit.co/bbrorien@gmail.com" method="POST">
         <!-- Honeypot to deter bots -->
         <input type="text" name="_honey" style="display:none">
-        <!-- Redirect back to the GitHub Pages site after submit; FormSubmit requires an absolute URL -->
-        <input type="hidden" name="_next" value="https://trader-obs.github.io/Portfolio/#contact?success=true">
+        <!-- Redirect to success.html after submit -->
+        <input type="hidden" name="_next" value="https://trader-obs.github.io/Portfolio/success.html">
         <input type="hidden" name="_subject" value="Portfolio message — OBS site">
         <input type="hidden" name="_captcha" value="false">
 
@@ -998,17 +998,6 @@ This project uses Puppeteer to scrape live game outcomes, applies Markov chains,
 
     reveals.forEach(el => io.observe(el));
 
-    // Show a success message if redirected after form submission
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('success') === 'true') {
-        const form = document.querySelector('.contact-form');
-        if (form) {
-          form.innerHTML = '<div style="background:var(--card);padding:1.5rem;border-radius:6px;border:1px solid var(--border);color:var(--text);">Thanks — your message has been sent. I\'ll get back to you soon.</div>';
-        }
-      }
-    } catch (e) { /* ignore on older browsers */ }
   </script>
-
 </body>
 </html>
